@@ -1,0 +1,27 @@
+@startuml journal
+
+class Program {
+    + Main()
+    + DisplayMenu()
+}
+
+class Journal {
+    - entries : List<Entry>
+    - prompts : List<string>
+
+    + AddEntry()
+    + DisplayEntries()
+    + SaveToFile()
+    + LoadFromFile()
+}
+
+class Entry {
+    - date : string
+    - prompt : string
+    - response : string
+}
+
+Program --> Journal
+Journal "1" --> "*" Entry
+
+@enduml
