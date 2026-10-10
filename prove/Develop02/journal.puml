@@ -7,7 +7,6 @@ class Program {
 
 class Journal {
     - entries : List<Entry>
-    - prompts : List<string>
 
     + AddEntry()
     + DisplayEntries()
@@ -19,8 +18,17 @@ class Entry {
     - date : string
     - prompt : string
     - response : string
+
+    + Display()
 }
 
+class PromptGenerator {
+    - prompts : List<string>
+
+    + GetRandomPrompt()
+}
+
+Journal --> PromptGenerator
 Program --> Journal
 Journal "1" --> "*" Entry
 
