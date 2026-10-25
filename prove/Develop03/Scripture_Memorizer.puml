@@ -2,8 +2,8 @@
 
 ' Runs the loop, prompts the user, handles quit, and clears the console.
 class Program {
-    +Main()
-    +Display()
+    +Main() : void
+    +Display() : void
 }
 'Stores the book, chapter, and verse numbers, including verse ranges.
 class Reference {
@@ -16,6 +16,9 @@ class Reference {
     +Reference(book : string, chapter : int, startVerse : int, endVerse : int)
     +GetDisplayText() : string
     +GetBook() : string
+    +GetChapter() : int
+    +GetStartVerse() : int
+    +GetEndVerse() : int
 }
 ' Stores the reference and scripture words, displays the passage, and hides random words.
 class Scripture {
@@ -34,7 +37,7 @@ class Word {
 
 
     'Stores the actual word.
-    +Word(text : string)
+    +Words(text : string)
     +Hide() : void
     +GetDisplayText() : string
     +IsHidden() : bool
