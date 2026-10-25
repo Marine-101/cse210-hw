@@ -7,11 +7,8 @@ class Program
     static void Main(string[] args)
     {
         // Exceeds core requirements:
-        // Uses a library containing multiple scriptures.
-        // Randomly selects a scripture for the user to memorize.
-        // Hides only words that are still visible, avoiding repeated hiding.
-        // Displays a progress counter showing how many words remain visible.
-        // Allows the user to memorize another scripture or quit.
+        // The program uses a library of three scriptures instead of a single scripture.
+        // It randomly selects a scripture from the library for the user to memorize.
         List<Scripture> scriptures = new List<Scripture>();
 
         scriptures.Add(new Scripture(
