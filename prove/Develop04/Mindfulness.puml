@@ -1,0 +1,49 @@
+
+@startuml Activity
+
+class Program {
+    + Main(args : string[]) : void
+}
+
+class Activity {
+    - _name : string
+    - _description : string
+    - _duration : int
+
+    + Activity(name : string, description : string)
+    + GetStartingMessage() : void
+    + GetEndingMessage() : void
+    + ShowSpinner(seconds : int) : void
+    + ShowCountDown(seconds : int) : void
+}
+
+class BreathingActivity {
+    + BreathingActivity()
+    + Run() : void
+}
+
+class ReflectionActivity {
+    - _prompts : List<string>
+    - _questions : List<string>
+
+    + ReflectionActivity()
+    + Run() : void
+    + GetRandomPrompt() : string
+    + GetRandomQuestion() : string
+}
+
+class ListingActivity {
+    - _prompts : List<string>
+    - _responses : List<string>
+
+    + ListingActivity()
+    + Run() : void
+    + GetRandomPrompt() : string
+}
+
+Activity <|-- BreathingActivity
+Activity <|-- ReflectionActivity
+Activity <|-- ListingActivity
+Program  <|-- Activity
+
+@enduml
