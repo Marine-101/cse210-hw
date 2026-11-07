@@ -1,4 +1,3 @@
-
 @startuml Activity
 
 class Program {
@@ -10,7 +9,7 @@ class Activity {
     - _description : string
     - _duration : int
 
-    + Activity(name : string, description : string)
+    + Activity(name : string, description : string, duration : int)
     + GetStartingMessage() : void
     + GetEndingMessage() : void
     + ShowSpinner(seconds : int) : void
@@ -41,9 +40,14 @@ class ListingActivity {
     + GetRandomPrompt() : string
 }
 
+' Inheritance
 Activity <|-- BreathingActivity
 Activity <|-- ReflectionActivity
 Activity <|-- ListingActivity
-Program  <|-- Activity
+
+' Program interactions
+Program --> BreathingActivity
+Program --> ReflectionActivity
+Program --> ListingActivity
 
 @enduml
